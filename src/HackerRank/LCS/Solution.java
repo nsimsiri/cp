@@ -24,7 +24,7 @@ public class Solution {
         }
     }
 
-    public static int[] compute(int[] A, int[] B){
+    public static ArrayList<Integer> compute(int[] A, int[] B){
 //        Integer[][] a = new Integer[5][5];
         Solution Sol = new Solution();
         ArrayList<Integer> ans = new ArrayList<Integer>();
@@ -61,16 +61,13 @@ public class Solution {
 
             }
         }
-        Solution.print(dp);
-        int _row = A.length-1;//if (A[_row]==B[_col])
+//        Solution.print(dp);
+        int _row = A.length-1;
         int _col = B.length-1;
-//        System.out.format("[%s %s] - %s %s\n", _row, _col, dp[_row][_col].row, dp[_row][_col].col);
         int curRow = _row+1;
         while(!(_row==dp[_row][_col].row && _col==dp[_row][_col].col)){
-//            System.out.format("[%s %s] - %s\n", _row, _col, dp[_row][_col].toString());
-//            System.out.println(A[_row]+ " " + dp[_row][_col].toString() + String.format(" %s %s (%s, %s)", A[_row], B[_col], _row, _col));
             if (A[_row]==B[_col] && curRow != _row){
-                System.out.println(A[_row]+ " " + dp[_row][_col].toString());
+                ans.add(A[_row]);
                 curRow=_row;
             }
             int __row = dp[_row][_col].row;
@@ -78,8 +75,8 @@ public class Solution {
             _row = __row;
             _col = __col;
         }
-        System.out.println(A[_row]+ " " + dp[_row][_col].toString());
-        return null;
+        if (A[_row]==B[_col]) ans.add(A[_row]);
+        return ans;
     }
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
@@ -98,7 +95,11 @@ public class Solution {
             B[j] = Integer.parseInt(input2[j]);
         }
 
-        int[] ans = Solution.compute(A, B);
+        ArrayList<Integer> ans = Solution.compute(A, B);
+
+        for(int i =  ans.size()-1; i>=0; i--){
+            System.out.print(ans.get(i) + " ");
+        }
         /*
         *
         5 6
