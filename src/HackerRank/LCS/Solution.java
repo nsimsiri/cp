@@ -45,8 +45,8 @@ public class Solution {
             boolean taken = false;
             for(int col = 1; col<B.length; col++){
                 DPNode node;
-                if (dp[row-1][col].data <= dp[row][col-1].data) node = Sol.new DPNode(row, col-1, dp[row][col-1].data);
-                else node = Sol.new DPNode(row-1, col, dp[row-1][col].data);
+                if (dp[row-1][col-1].data <= dp[row][col-1].data) node = Sol.new DPNode(row, col-1, dp[row][col-1].data);
+                else node = Sol.new DPNode(row-1, col, dp[row-1][col-1].data);
                 if (A[row]==B[col] && !taken){
                     taken = true;
                     if (node.data==0){
@@ -58,10 +58,15 @@ public class Solution {
                     }
                 }
                 dp[row][col]=node;
-
             }
         }
-//        Solution.print(dp);
+//        for(int row = 1; row < A.length; row++){
+//            for(int col = 1; col < B.length; col++){
+//                DPNode node;
+//
+//            }
+//        }
+        Solution.print(dp);
         int _row = A.length-1;
         int _col = B.length-1;
         int curRow = _row+1;
