@@ -33,39 +33,37 @@ public class Solution {
         if (A[0]==B[0]) dp[0][0] = Sol.new DPNode(0,0,1);
         else dp[0][0] = Sol.new DPNode(0,0,0);
         for (int i =1 ; i < B.length;i ++){
-            if (A[0]==B[i]) dp[0][i]=Sol.new DPNode(0, i, 1);
+            boolean taken = false;
+            if (A[0]==B[i] && !taken) {dp[0][i]=Sol.new DPNode(0, i, 1); taken=true;}
             else dp[0][i]=Sol.new DPNode(0, i-1, dp[0][i-1].data);
         }
         for (int i = 1; i < A.length; i++){
-            if (A[i]==B[0]) dp[i][0]=Sol.new DPNode(i, 0, 1);
+            boolean taken = false;
+            if (A[i]==B[0]&&!taken){dp[i][0]=Sol.new DPNode(i, 0, 1);taken=true;}
             else dp[i][0] = Sol.new DPNode(i-1, 0 , dp[i-1][0].data);
         }
         // build dp table
         for(int row = 1; row<A.length; row++){
-            boolean taken = false;
             for(int col = 1; col<B.length; col++){
                 DPNode node;
-                if (dp[row-1][col-1].data <= dp[row][col-1].data) node = Sol.new DPNode(row, col-1, dp[row][col-1].data);
-                else node = Sol.new DPNode(row-1, col, dp[row-1][col-1].data);
-                if (A[row]==B[col] && !taken){
-                    taken = true;
+                int left = dp[row][col-1].data;
+                int up = dp[row-1][col].data;
+                int leftup = dp[row-1][col-1].data;
+                if (A[row]==B[col]){
+                    node = Sol.new DPNode(row-1, col-1, dp[row-1][col-1].data);// look at max of A_i-1, B_j-1
                     if (node.data==0){
                         node.row=row;
                         node.col=col;
-                        node.data=1;
-                    } else {
-                        node.data+=1;
                     }
+                    node.data+=1;
+                } else {
+                    if (left >= up) node = Sol.new DPNode(row, col-1, left);
+                    else node = Sol.new DPNode(row-1, col, up);
                 }
                 dp[row][col]=node;
             }
         }
-//        for(int row = 1; row < A.length; row++){
-//            for(int col = 1; col < B.length; col++){
-//                DPNode node;
-//
-//            }
-//        }
+
         Solution.print(dp);
         int _row = A.length-1;
         int _col = B.length-1;
