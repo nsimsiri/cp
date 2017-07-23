@@ -1,3 +1,4 @@
 fl="$1"
 fle="$1.java"
 echo "javac $fle and java $fl"
+javac $fle && java $fl
