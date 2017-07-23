@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class lca {
+public class hr_lca {
     public static class Node {
         int data;
         Node left;
