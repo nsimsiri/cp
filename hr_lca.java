@@ -13,10 +13,10 @@ public class lca {
     }
     
     static Node _lca(Node root, int a, int b){
-        
+        return null;
     }
     public static void main(String[] args){
-        
+        System.out.println("hilekj");
     }
 }
     
