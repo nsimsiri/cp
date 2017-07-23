@@ -1,2 +1,3 @@
 fl="$1"
-echo "javac $fl and java" 
+fle="$1.java"
+echo "javac $fle and java $fl"
