@@ -59,6 +59,18 @@ public class hr_lca {
     }
     public static void main(String[] args){
         System.out.println("hilekj");
+        Map<Node,Node> m = new HashMap<>();
+        Node n1 = new Node(null, 1, null);
+        Node n2 = new Node(null, 2, null);
+        Node n3 = new Node(null, 3, null);
+        Node n4 = new Node(null, 4, null);
+        Node n5 = new Node(null, 5, null);
+        Node n6 = new Node(null, 6, null);
+        Node n7 = new Node(null, 7, null);
+        n4.left=n2; n2.left=n1; n2.right=n3
+        n4.right=n5;
+        n5.right=n7;
+        n7.left=n6;
     }
 }
     
