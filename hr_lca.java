@@ -31,7 +31,7 @@ public class hr_lca {
     }
     
     static Node _lca(Node root, int a, int b){
-        Map<Integer,Integer> m = new HashMap<>();
+        Map<Node,Node> m = new HashMap<>();
         Node n1 = find(root, a, m);
         Node n2 = find(root, b, m);
         Set<Integer> mb = new HashSet<>();
@@ -41,7 +41,7 @@ public class hr_lca {
                     return n1;
                 } else {
                     mb.add(n1.data);
-                    n1 = mb.get(n1);
+                    n1 = m.get(n1);
                 }
             }
             if(n2.data!=root.data){
