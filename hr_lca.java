@@ -28,6 +28,7 @@ public class hr_lca {
             m.put(child, cur);
             cur = child;
         }
+        return null;
     }
     
     static Node _lca(Node root, int a, int b){
