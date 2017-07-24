@@ -31,7 +31,7 @@ public class hr_lca {
         return null;
     }
     
-    static Node _lca(Node root, int a, int b){
+    static Node lca(Node root, int a, int b){
         Map<Node,Node> m = new HashMap<>();
         Node n1 = find(root, a, m);
         Node n2 = find(root, b, m);
