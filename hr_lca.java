@@ -19,9 +19,9 @@ public class hr_lca {
             if(cur.left!=null && cur.data < x){
                 child = cur.left;
             } else if(cur.right!=null && cur.data > x){
-                child = cur;
+                child = cur.right;
             } else if(cur.data == x){
-                return cur.right;
+                return cur;
             } else {
                 break;
             }
