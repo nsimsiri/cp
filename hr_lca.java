@@ -12,25 +12,27 @@ public class hr_lca {
         }
     }
     
+    public static Node find(Node root, int x, Map<Node,Node> m){
+        Node cur = root
+        while(cur!=null){
+            Node child = null;
+            if(cur.left!=null && cur.data < x){
+                child = cur.left;
+            } else if(cur.right!=null && cur.data > x){
+                child = cur;
+            } else if(cur.data == x){
+                return cur.right;
+            } else {
+                break;
+            }
+            m.put(child, cur);
+            cur = child
+        }
+    }
+    
     static Node _lca(Node root, int a, int b){
         Map<Integer,Integer> m = new HashMap<>();
-        int[] In=new int[]{a,b};
-        for(int i=0;i<2;i++){
-            Stack<Node> st = new Stack<>();
-            st.push(root);
-            while(!st.isEmpty()){
-                Node cur = st.pop();
-                if(cur.left!=null){
-                    st.push(cur.left);
-                    m.put(cur.left.data, cur.data);
-                }
-                if(cur.right!=null){
-                    st.push(cur.right);
-                    m.put(cur.right.data, cur.data);
-                }
-                if (cur.data == In[i]) break;
-            }
-        }
+        
         Set<Integer> mb = new HashSet<>();
         int n1 = a; int n2 = b;
         while(!(n1==root.data && n2==root.data)){
