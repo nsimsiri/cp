@@ -32,15 +32,25 @@ public class hr_lca {
     
     static Node _lca(Node root, int a, int b){
         Map<Integer,Integer> m = new HashMap<>();
-        
+        Node n1 = find(root, a, m);
+        Node n2 = find(root, b, m);
         Set<Integer> mb = new HashSet<>();
-        int n1 = a; int n2 = b;
-        while(!(n1==root.data && n2==root.data)){
-            if(n1!=root.data){
-                
+        while(!(n1.data==root.data && n2.data==root.data)){
+            if(n1.data!=root.data){
+                if (mb.contains(n1.data)){
+                    return n1;
+                } else {
+                    mb.add(n1.data);
+                    n1 = mb.get(n1);
+                }
             }
-            if(n2!=root.data){
-                
+            if(n2.data!=root.data){
+                if(mb.contains(n2)){
+                    return n2;
+                } else {
+                    mb.add(n2.data);
+                    n2 = m.get(n2);
+                }
             }
         }
         return root;
