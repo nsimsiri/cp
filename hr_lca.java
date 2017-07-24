@@ -13,7 +13,7 @@ public class hr_lca {
     }
     
     public static Node find(Node root, int x, Map<Node,Node> m){
-        Node cur = root
+        Node cur = root;
         while(cur!=null){
             Node child = null;
             if(cur.left!=null && cur.data < x){
@@ -26,7 +26,7 @@ public class hr_lca {
                 break;
             }
             m.put(child, cur);
-            cur = child
+            cur = child;
         }
     }
     
