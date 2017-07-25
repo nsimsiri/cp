@@ -53,7 +53,7 @@ public class hr_lca {
                 }
             }
             if(n2.data!=root.data){
-                if(mb.contains(n2)){
+                if(mb.contains(n2.data)){
                     return n2;
                 } else {
                     mb.add(n2.data);
