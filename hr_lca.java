@@ -39,6 +39,9 @@ public class hr_lca {
         Map<Node,Node> m = new HashMap<>();
         Node n1 = find(root, a, m);
         Node n2 = find(root, b, m);
+        System.out.println("n1 " + n1);
+        System.out.println("n2 " + n2);
+        System.out.println(m);
         Set<Integer> mb = new HashSet<>();
         while(!(n1.data==root.data && n2.data==root.data)){
             if(n1.data!=root.data){
@@ -75,9 +78,7 @@ public class hr_lca {
         n4.right=n5;
         n5.right=n7;
         n7.left=n6;
-        Node nn = find(n4, 6, m);
-        System.out.println(nn);
-        System.out.println(m);
+       
         Node ans1 = lca(n4, 1, 3);
         System.out.println(ans1);
         
@@ -86,5 +87,6 @@ public class hr_lca {
     }
 }
     
+
 
 
