@@ -10,6 +10,10 @@ public class hr_lca {
             this.right=right;
             this.data=data;
         }
+        @override
+        public String toString(){
+            return "Node("+this.data+")";
+        }
     }
     
     public static Node find(Node root, int x, Map<Node,Node> m){
@@ -72,9 +76,10 @@ public class hr_lca {
         n5.right=n7;
         n7.left=n6;
         Node nn = find(n4, 6, m);
-        System.out.println(nn.data);
+        System.out.println(nn);
         System.out.println(m);
     }
 }
     
+
 
