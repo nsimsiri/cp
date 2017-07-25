@@ -78,6 +78,11 @@ public class hr_lca {
         Node nn = find(n4, 6, m);
         System.out.println(nn);
         System.out.println(m);
+        Node ans1 = lca(n4, 1, 3);
+        System.out.println(ans1);
+        
+        
+        
     }
 }
     
