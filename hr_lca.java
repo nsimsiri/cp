@@ -66,12 +66,13 @@ public class hr_lca {
     
     public static Node lca(Node root, int a, int b){
         if (root.data < a && root.data < b){
-            lca(root.right, a, b);
+            return lca(root.right, a, b);
         } else if (root.data > a && root.data >b){
-            lca(root.left, a, b);
+            return lca(root.left, a, b);
         } else {
             return root;
         }
+        return root;
     }
     public static void main(String[] args){
         System.out.println("running");
