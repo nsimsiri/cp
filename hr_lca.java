@@ -86,7 +86,7 @@ public class hr_lca {
         System.out.println(ans1);
         
         ans1 = lca(n4, 1, 5);
-        System.out.println(ans1)
+        System.out.println(ans1);
         
         
         
