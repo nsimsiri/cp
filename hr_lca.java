@@ -10,7 +10,7 @@ public class hr_lca {
             this.right=right;
             this.data=data;
         }
-        @override
+        
         public String toString(){
             return "Node("+this.data+")";
         }
