@@ -58,7 +58,7 @@ public class hr_lca {
         
     }
     public static void main(String[] args){
-        System.out.println("hilekj");
+        System.out.println("running");
         Map<Node,Node> m = new HashMap<>();
         Node n1 = new Node(null, 1, null);
         Node n2 = new Node(null, 2, null);
@@ -71,6 +71,7 @@ public class hr_lca {
         n4.right=n5;
         n5.right=n7;
         n7.left=n6;
+        Node nn = find(n4, 6, m);
     }
 }
     
