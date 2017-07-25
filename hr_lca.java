@@ -72,6 +72,7 @@ public class hr_lca {
         } else {
             return root;
         }
+        return root;
     }
     public static void main(String[] args){
         System.out.println("running");
