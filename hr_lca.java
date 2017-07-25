@@ -72,6 +72,8 @@ public class hr_lca {
         n5.right=n7;
         n7.left=n6;
         Node nn = find(n4, 6, m);
+        System.out.println(nn.data);
+        System.out.println(m);
     }
 }
     
