@@ -82,11 +82,18 @@ public class hr_lca {
         Node ans1 = lca(n4, 1, 3);
         System.out.println(ans1);
         
+        ans1 = lca(n4, 1, 4);
+        System.out.println(ans1);
+        
+        ans1 = lca(n4, 1, 5);
+        System.out.println(ans1)
+        
         
         
     }
 }
     
+
 
 
 
