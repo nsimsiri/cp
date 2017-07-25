@@ -35,7 +35,7 @@ public class hr_lca {
         return null;
     }
     
-    static Node lca(Node root, int a, int b){
+    static Node _lca(Node root, int a, int b){
         Map<Node,Node> m = new HashMap<>();
         Node n1 = find(root, a, m);
         Node n2 = find(root, b, m);
@@ -62,7 +62,16 @@ public class hr_lca {
             }
         }
         return root;
-        
+    }
+    
+    public Node lca(Node root, int a, int b){
+        if (root.data < a && root.data < b){
+            lca(root.right, a, b);
+        } else if (root.data > a && root.data >b){
+            lca(root.left, a, b);
+        } else {
+            return root;
+        }
     }
     public static void main(String[] args){
         System.out.println("running");
