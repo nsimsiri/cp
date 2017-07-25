@@ -64,7 +64,7 @@ public class hr_lca {
         return root;
     }
     
-    public Node lca(Node root, int a, int b){
+    public static Node lca(Node root, int a, int b){
         if (root.data < a && root.data < b){
             lca(root.right, a, b);
         } else if (root.data > a && root.data >b){
