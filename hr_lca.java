@@ -16,9 +16,9 @@ public class hr_lca {
         Node cur = root;
         while(cur!=null){
             Node child = null;
-            if(cur.left!=null && cur.data < x){
+            if(cur.left!=null && cur.data > x){
                 child = cur.left;
-            } else if(cur.right!=null && cur.data > x){
+            } else if(cur.right!=null && cur.data < x){
                 child = cur.right;
             } else if(cur.data == x){
                 return cur;
@@ -77,3 +77,4 @@ public class hr_lca {
     }
 }
     
+
