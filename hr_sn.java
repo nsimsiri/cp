@@ -7,7 +7,7 @@ public class hr_sn {
             this.left=left; this.right=right; this.data=data;
         }
         @Override public String toString(){
-            return "Node("+this.left+", "+this.data+", "+thie.right+")";
+            return "Node("+this.left+", "+this.data+", "+this.right+")";
         }
     }
     public static void(String[] args){
@@ -23,6 +23,8 @@ public class hr_sn {
             Node b = new Node(null, Integer.parseInt(sl[1]), null);
             vtx[i+1].left = a; vtx[i+1].right = b;
         }
+        System.out.println(n1);
+  
         int T = Integer.parseInt(in.readLine());
         for (int i = 0; i < T; i++){
             int lv = Integer.parseInt(in.readLine());
@@ -31,4 +33,5 @@ public class hr_sn {
         
     }
 }
+
 
