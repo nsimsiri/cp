@@ -16,12 +16,17 @@ public class hr_sn {
         Node[] vtx = new Node[];
         Node n1 = new(null, 1, null);
         vtx[0] = n1;
+        int k = 1;
         for(int i = 0; i < N; i++){
             String ss = in.readLine();
             String[] sl = ss.split(" ");
             Node a = new Node(null, Integer.parseInt(sl[0]), null);
             Node b = new Node(null, Integer.parseInt(sl[1]), null);
-            vtx[i+1].left = a; vtx[i+1].right = b;
+            vtx[i].left = a; vtx[i].right = b;
+            if(k < N-1){
+                vtx[k++]=a;
+                vtx[k++]=b;
+            }
         }
         System.out.println(n1);
   
@@ -33,5 +38,6 @@ public class hr_sn {
         
     }
 }
+
 
 
