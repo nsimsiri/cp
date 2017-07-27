@@ -10,6 +10,17 @@ public class hr_sn {
             return "Node("+this.left+", "+this.data+", "+this.right+")";
         }
     }
+    
+    public static void inotr(Node root){
+        if (root.left!=null){
+            inotr(root.left);
+        }
+        System.out.print(root.data + " ");
+        if (root.right!=null){
+            inotr(root.right);
+        }
+    }
+    
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         int N = Integer.parseInt(in.nextLine());
@@ -28,7 +39,8 @@ public class hr_sn {
             vtx[k++]=a;
             vtx[k++]=b;
         }
-        System.out.println(n1);
+        System.out.println();
+        inotr(n1);
   
         int T = Integer.parseInt(in.nextLine());
         for (int i = 0; i < T; i++){
@@ -38,6 +50,7 @@ public class hr_sn {
         
     }
 }
+
 
 
 
