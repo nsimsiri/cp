@@ -12,13 +12,13 @@ public class hr_sn {
     }
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
-        int N = Integer.parseInt(in.readLine());
+        int N = Integer.parseInt(in.nextLine());
         Node[] vtx = new Node[2*N+1];
         Node n1 = new Node(null, 1, null);
         vtx[0] = n1;
         int k = 1;
         for(int i = 0; i < N; i++){
-            String ss = in.readLine();
+            String ss = in.nextLine();
             String[] sl = ss.split(" ");
             Node a = new Node(null, Integer.parseInt(sl[0]), null);
             Node b = new Node(null, Integer.parseInt(sl[1]), null);
@@ -30,9 +30,9 @@ public class hr_sn {
         }
         System.out.println(n1);
   
-        int T = Integer.parseInt(in.readLine());
+        int T = Integer.parseInt(in.nextLine());
         for (int i = 0; i < T; i++){
-            int lv = Integer.parseInt(in.readLine());
+            int lv = Integer.parseInt(in.nextLine());
             System.out.println(lv);
         }
         
