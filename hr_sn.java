@@ -39,14 +39,10 @@ public class hr_sn {
             vtx[k++]=a;
             vtx[k++]=b;
         }
-        System.out.println();
-        inotr(n1);
-        
-        System.out.println();
+        System.out.println("______");
         int T = Integer.parseInt(in.nextLine());
         for (int i = 0; i < T; i++){
             int lv = Integer.parseInt(in.nextLine());
-            System.out.println("c="+i + " - " + lv);
             Queue<Node> q = new LinkedList<>();
             q.add(n1);
             int[] hgt = new int[N+1];
