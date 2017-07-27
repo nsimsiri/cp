@@ -41,7 +41,8 @@ public class hr_sn {
         }
         System.out.println();
         inotr(n1);
-  
+        
+        System.out.println();
         int T = Integer.parseInt(in.nextLine());
         for (int i = 0; i < T; i++){
             int lv = Integer.parseInt(in.nextLine());
