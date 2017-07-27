@@ -36,8 +36,9 @@ public class hr_sn {
             Node a = (ai == -1) ? null : new Node(null, ai, null);
             Node b = (bi == -1) ? null : new Node(null, bi, null);
             vtx[i].left = a; vtx[i].right = b;
-            vtx[k++]=a;
-            vtx[k++]=b;
+            if(a!=null) vtx[a.data] = a;
+            if(b!=null) vtx[b.data] = b;
+           
         }
         
         int T = Integer.parseInt(in.nextLine());
