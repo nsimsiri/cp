@@ -48,6 +48,14 @@ public class hr_sn {
             int lv = Integer.parseInt(in.nextLine());
             System.out.println("c="+i + " - " + lv);
             Queue<Node> q = new LinkedList<>();
+            q.add(n1);
+            int[] hgt = new int[N+1];
+            hgt[0]=1;
+            while(!q.isEmpty()){
+                Node cur=q.
+            }
+            
+            
             
             
         }
