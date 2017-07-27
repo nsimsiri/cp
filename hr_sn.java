@@ -36,8 +36,8 @@ public class hr_sn {
             Node a = (ai == -1) ? null : new Node(null, ai, null);
             Node b = (bi == -1) ? null : new Node(null, bi, null);
             vtx[i].left = a; vtx[i].right = b;
-            if(a!=null) vtx[a.data] = a;
-            if(b!=null) vtx[b.data] = b;
+            if(a!=null) vtx[a.data-1] = a;
+            if(b!=null) vtx[b.data-1] = b;
            
         }
         
