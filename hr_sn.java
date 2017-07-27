@@ -46,7 +46,10 @@ public class hr_sn {
         int T = Integer.parseInt(in.nextLine());
         for (int i = 0; i < T; i++){
             int lv = Integer.parseInt(in.nextLine());
-            System.out.println(lv);
+            System.out.println("c="+i + " - " + lv);
+            Queue<Node> q = new LinkedList<>();
+            
+            
         }
         
     }
