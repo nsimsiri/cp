@@ -50,18 +50,32 @@ public class hr_sn {
             Queue<Node> q = new LinkedList<>();
             q.add(n1);
             int[] hgt = new int[N+1];
-            hgt[0]=1;
+            hgt[n1.data]=1;
             while(!q.isEmpty()){
-                Node cur=q.
+                Node cur=q.poll();
+                if(hgt[cur.data]%lv==0){
+                    Node tempL = cur.left;
+                    cur.left=cur.right;
+                    cur.right = tempL;
+                }
+                if(cur.left!=null){
+                    q.add(cur.left);
+                    hgt[cur.left.data] = hgt[cur.data]+1;
+                }
+                if(cur.right!=null){
+                    q.add(cur.right);
+                    hgt[cur.right.data] = hgt[cur.data]+1;
+                }
             }
-            
-            
-            
+            System.out.println();
+            inotr(n1);
+            System.out.println();
             
         }
         
     }
 }
+
 
 
 
