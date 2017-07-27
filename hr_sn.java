@@ -20,13 +20,13 @@ public class hr_sn {
         for(int i = 0; i < N; i++){
             String ss = in.nextLine();
             String[] sl = ss.split(" ");
-            Node a = new Node(null, Integer.parseInt(sl[0]), null);
-            Node b = new Node(null, Integer.parseInt(sl[1]), null);
+            int ai = Integer.parseInt(sl[0]);
+            int bi = Integer.parseInt(sl[1]);
+            Node a = (ai == -1) ? null : new Node(null, ai, null);
+            Node b = (bi == -1) ? null : new Node(null, bi, null);
             vtx[i].left = a; vtx[i].right = b;
-            if(k < N-1){
-                vtx[k++]=a;
-                vtx[k++]=b;
-            }
+            vtx[k++]=a;
+            vtx[k++]=b;
         }
         System.out.println(n1);
   
