@@ -1,4 +1,4 @@
-import java.util.;
+import java.util.*;
 
 public class hr_sn {
     public static class Node{
@@ -10,11 +10,11 @@ public class hr_sn {
             return "Node("+this.left+", "+this.data+", "+this.right+")";
         }
     }
-    public static void(String[] args){
+    public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         int N = Integer.parseInt(in.readLine());
-        Node[] vtx = new Node[];
-        Node n1 = new(null, 1, null);
+        Node[] vtx = new Node[2*N+1];
+        Node n1 = new Node(null, 1, null);
         vtx[0] = n1;
         int k = 1;
         for(int i = 0; i < N; i++){
