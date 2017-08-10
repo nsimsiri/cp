@@ -20,7 +20,7 @@ public class sp_treeiso {
         return m.getOrDefault(node, new ArrayList<>()).size()==1;
     }
     
-    static void walkcnt(int x, Map<Integer,List<Integer>> m, int[] len){
+    static int walkcnt(int x, Map<Integer,List<Integer>> m, int[] len){
         int n = len.length;
         Stack<Integer> st = new Stack<>();
         boolean[] vis = new boolean[n];
@@ -34,6 +34,11 @@ public class sp_treeiso {
                 if (!vis[nei]) st.push(nei);
             }
         }
+        int cand=x;
+        for(int i=0;i<n;i++){
+            if(len[x] > cand && isLeaf(i)) cand = i;
+        }
+        return cand;
     }
     
     public static void main(String[] args){
