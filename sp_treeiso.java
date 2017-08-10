@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class sp_treeiso {
-    public static void bldtr(int a,int b,Map<Integer,List<Integer>>){
+    public static void bldtr(int a,int b,Map<Integer,List<Integer>> m){
         if(m.containsKey(a)) m.get(a).add(b);
         else{
             List<Integer> l = new ArrayList<>();
