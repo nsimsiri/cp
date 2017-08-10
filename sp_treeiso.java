@@ -43,9 +43,6 @@ public class sp_treeiso {
     
     static vois findcen(Map<Integer,List<Integer>> m, List<Integer> Out, int n){
         int start = 0;
-        for(int i=0;i<n;i++){
-            start = isLeaf(i, m) ? i : start;
-        }
         int[] len1 = new int[n];
         int[] len2 = new int[n];
         int endl1 = walkcnt(start, m, len1);
