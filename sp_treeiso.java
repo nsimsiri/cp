@@ -15,6 +15,27 @@ public class sp_treeiso {
             m.put(b,l);
         }
     }
+    
+    static boolean isLeaf(int node, Map<Integer,List<Integer>> m) {
+        return m.getOrDefault(node, new ArrayList<>()).size()==1;
+    }
+    
+    static void walkcnt(int x, Map<Integer,List<Integer>> m, int[] len){
+        int n = len.length;
+        Stack<Integer> st = new Stack<>();
+        boolean[] vis = new boolean[n];
+        len[x]=0;
+        st.push(x);
+        while(!st.isEmpty()){
+            int cur = st.pop();
+            vis[cur]=true;
+            for(Integer nei : m.get(cur)){
+                len[nei]=len[cur]+1;
+                if (!vis[nei]) st.push(nei);
+            }
+        }
+    }
+    
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
