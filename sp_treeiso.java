@@ -36,7 +36,7 @@ public class sp_treeiso {
         }
         int cand=x;
         for(int i=0;i<n;i++){
-            if(len[x] > cand && isLeaf(i)) cand = i;
+            if(len[i] > len[cand] && isLeaf(i)) cand = i;
         }
         return cand;
     }
