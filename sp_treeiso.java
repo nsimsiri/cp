@@ -41,7 +41,7 @@ public class sp_treeiso {
         return cand;
     }
     
-    static int findcen(Map<Integer,List<Integer>> m, int n){
+    static vois findcen(Map<Integer,List<Integer>> m, List<Integer> Out, int n){
         int start = 0;
         for(int i=0;i<n;i++){
             start = isLeaf(i, m) ? i : start;
@@ -62,6 +62,11 @@ public class sp_treeiso {
                 }
             }
         }
+        int mid=path.size()/2;
+        if(path.size()%2==0){
+            Out.add(path.get(mid-1));
+        }
+        Out.add(path.get(mid));
         
         
     }
