@@ -67,8 +67,6 @@ public class sp_treeiso {
             Out.add(path.get(mid-1));
         }
         Out.add(path.get(mid));
-        
-        
     }
     
     public static void main(String[] args){
@@ -91,6 +89,7 @@ public class sp_treeiso {
         }
     }
 }
+
 
 
 
