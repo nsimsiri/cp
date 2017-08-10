@@ -41,6 +41,10 @@ public class sp_treeiso {
         return cand;
     }
     
+    static int findcen(Map<Integer,List<Integer>> m, int n){
+        
+    }
+    
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -61,4 +65,5 @@ public class sp_treeiso {
         }
     }
 }
+
 
