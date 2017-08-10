@@ -50,6 +50,18 @@ public class sp_treeiso {
         int[] len2 = new int[n];
         int endl1 = walkcnt(start, m, len1);
         int endl2 = walkcnt(endl1, m, len2);
+        List<Integer> path = new ArrayList<>();
+        int nextNode = endl1;
+        path.add(nextNode);
+        while(nextNode!=endl2){
+            for(Integer nei : m.get(nextNode)){
+                if(len2[nei] < len2[nextNode]){
+                    nextNode = nei;
+                    path.add(nextNode);
+                    break;
+                }
+            }
+        }
         
         
     }
