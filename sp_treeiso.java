@@ -36,12 +36,21 @@ public class sp_treeiso {
         }
         int cand=x;
         for(int i=0;i<n;i++){
-            if(len[i] > len[cand] && isLeaf(i)) cand = i;
+            if(len[i] > len[cand] && isLeaf(i,m)) cand = i;
         }
         return cand;
     }
     
     static int findcen(Map<Integer,List<Integer>> m, int n){
+        int start = 0;
+        for(int i=0;i<n;i++){
+            start = isLeaf(i, m) ? i : start;
+        }
+        int[] len1 = new int[n];
+        int[] len2 = new int[n];
+        int endl1 = walkcnt(start, m, len1);
+        int endl2 = walkcnt(endl1, m, len2);
+        
         
     }
     
