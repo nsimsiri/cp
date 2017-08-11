@@ -34,6 +34,7 @@ public class sp_treeiso {
                 if (!vis[nei]) {
                   len[nei]=len[cur]+1;
                   st.push(nei);
+                }
             }
         }
         int cand=x;
@@ -43,48 +44,48 @@ public class sp_treeiso {
         return cand;
     }
 
-    // public static void findcen(Map<Integer,List<Integer>> m, List<Integer> Out, int n){
-    //     int start = 0;
-    //     int[] len1 = new int[n];
-    //     int[] len2 = new int[n];
-    //     int endl1 = walkcnt(start, m, len1);
-    //     int endl2 = walkcnt(endl1, m, len2);
-    //     List<Integer> path = new ArrayList<>();
-    //     int nextNode = endl1;
-    //     path.add(nextNode);
-    //     while(nextNode!=endl2){
-    //         for(Integer nei : m.get(nextNode)){
-    //             if(len2[nei] < len2[nextNode]){
-    //                 nextNode = nei;
-    //                 path.add(nextNode);
-    //                 break;
-    //             }
-    //         }
-    //     }
-    //     int mid=path.size()/2;
-    //     if(path.size()%2==0){
-    //         Out.add(path.get(mid-1));
-    //     }
-    //     Out.add(path.get(mid));
-    // }
-    //
-    // public static void main(String[] args){
-    //     Scanner in = new Scanner(System.in);
-    //     int n = in.nextInt();
-    //     for(int i = 0; i < n; i++){
-    //         int k = in.nextInt();
-    //         Map<Integer,List<Integer>> t1 = new HashMap<>();
-    //         Map<Integer,List<Integer>> t2 = new HashMap<>();
-    //         for(int j = 0;j<2*n-2;j++){
-    //             String[] inp = in.nextLine().split(" ");
-    //             int v1 = Integer.parseInt(inp[0]);
-    //             int v2 = Integer.parseInt(inp[1]);
-    //             if(j<n) bldtr(v1,v2,t1);
-    //             else bldtr(v1,v2,t2);
-    //
-    //
-    //         }
-    //
-    //     }
-    // }
+    public static void findcen(Map<Integer,List<Integer>> m, List<Integer> Out, int n){
+        int start = 0;
+        int[] len1 = new int[n];
+        int[] len2 = new int[n];
+        int endl1 = walkcnt(start, m, len1);
+        int endl2 = walkcnt(endl1, m, len2);
+        List<Integer> path = new ArrayList<>();
+        int nextNode = endl1;
+        path.add(nextNode);
+        while(nextNode!=endl2){
+            for(Integer nei : m.get(nextNode)){
+                if(len2[nei] < len2[nextNode]){
+                    nextNode = nei;
+                    path.add(nextNode);
+                    break;
+                }
+            }
+        }
+        int mid=path.size()/2;
+        if(path.size()%2==0){
+            Out.add(path.get(mid-1));
+        }
+        Out.add(path.get(mid));
+    }
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        for(int i = 0; i < n; i++){
+            int k = in.nextInt();
+            Map<Integer,List<Integer>> t1 = new HashMap<>();
+            Map<Integer,List<Integer>> t2 = new HashMap<>();
+            for(int j = 0;j<2*n-2;j++){
+                String[] inp = in.nextLine().split(" ");
+                int v1 = Integer.parseInt(inp[0]);
+                int v2 = Integer.parseInt(inp[1]);
+                if(j<n) bldtr(v1,v2,t1);
+                else bldtr(v1,v2,t2);
+
+
+            }
+
+        }
+    }
 }
