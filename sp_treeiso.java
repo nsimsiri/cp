@@ -16,12 +16,12 @@ public class sp_treeiso {
         }
     }
 
-    static boolean isLeaf(int node, Map<Integer,List<Integer>> m) {
+    public static boolean isLeaf(int node, Map<Integer,List<Integer>> m) {
         List<Integer> l = m.getOrDefault(node, null);
         return null == l ? false : l.size() == 1;
     }
 
-    static int walkcnt(int x, Map<Integer,List<Integer>> m, int[] len){
+    public static int walkcnt(int x, Map<Integer,List<Integer>> m, int[] len){
         int n = len.length;
         Stack<Integer> st = new Stack<>();
         boolean[] vis = new boolean[n];
@@ -43,7 +43,7 @@ public class sp_treeiso {
         return cand;
     }
 
-    static void findcen(Map<Integer,List<Integer>> m, List<Integer> Out, int n){
+    public static void findcen(Map<Integer,List<Integer>> m, List<Integer> Out, int n){
         int start = 0;
         int[] len1 = new int[n];
         int[] len2 = new int[n];
