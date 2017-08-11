@@ -31,8 +31,9 @@ public class sp_treeiso {
             int cur = st.pop();
             vis[cur]=true;
             for(Integer nei : m.get(cur)){
-                len[nei]=len[cur]+1;
-                if (!vis[nei]) st.push(nei);
+                if (!vis[nei]) {
+                  len[nei]=len[cur]+1;
+                  st.push(nei);
             }
         }
         int cand=x;
@@ -42,7 +43,7 @@ public class sp_treeiso {
         return cand;
     }
 
-    static vois findcen(Map<Integer,List<Integer>> m, List<Integer> Out, int n){
+    static void findcen(Map<Integer,List<Integer>> m, List<Integer> Out, int n){
         int start = 0;
         int[] len1 = new int[n];
         int[] len2 = new int[n];
