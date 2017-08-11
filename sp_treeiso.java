@@ -42,7 +42,7 @@ public class sp_treeiso {
         }
         return cand;
     }
-
+    
     public static void findcen(Map<Integer,List<Integer>> m, List<Integer> Out, int n){
         int start = 0;
         int[] len1 = new int[n];
