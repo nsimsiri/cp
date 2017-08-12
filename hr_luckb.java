@@ -4,7 +4,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Solution {
+public class hr_luckb {
     public static int[] readTuple(String in){
       String[] args = in.split(" ");
       return new int[]{Integer.parseInt(args[0]), Integer.parseInt(args[1])}
