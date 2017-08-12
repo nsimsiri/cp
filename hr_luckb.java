@@ -25,7 +25,7 @@ public class hr_luckb {
             tos.add(luck);
           }
         }
-        in.close();
+        bf.close();
         Collections.sort(tos);
         for(int i = tos.size()-1; i >= 0; i--){
           if(i >= tos.size()-1-K) lucks+=tos.get(i);
