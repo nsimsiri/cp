@@ -7,9 +7,9 @@ import java.util.regex.*;
 public class hr_luckb {
     public static int[] readTuple(String in){
       String[] args = in.split(" ");
-      return new int[]{Integer.parseInt(args[0]), Integer.parseInt(args[1])}
+      return new int[]{Integer.parseInt(args[0]), Integer.parseInt(args[1])};
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         int[] nk = readTuple(bf.readLine());
@@ -24,12 +24,14 @@ public class hr_luckb {
           } else {
             tos.add(luck);
           }
-          Collections.sort(tos);
-          for(int i = tos.size()-1; i >= 0; i--){
-            if(i >= tos.size()-1-k) luck+=tos.get(i);
-            else luck-=tos.get(i)
-          }
-          System.out.println(luck);
         }
+        in.close();
+        Collections.sort(tos);
+        for(int i = tos.size()-1; i >= 0; i--){
+          if(i >= tos.size()-1-k) lucks+=tos.get(i);
+          else lucks-=tos.get(i)
+        }
+        System.out.println(lucks);
+
     }
   }
