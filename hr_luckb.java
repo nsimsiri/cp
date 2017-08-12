@@ -17,7 +17,7 @@ public class hr_luckb {
         int lucks = 0;
         List<Integer> tos = new ArrayList<>();
         for(int i=0;i<N;i++){
-          int[] tup = bf.readLine();
+          int[] tup = readTuple(bf.readLine());
           int luck = tup[0]; int imp = tup[1];
           if (imp == 0){
             lucks += luck;
