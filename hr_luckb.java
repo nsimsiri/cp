@@ -17,7 +17,7 @@ public class hr_luckb {
         int lucks = 0;
         List<Integer> tos = new ArrayList<>();
         for(int i=0;i<N;i++){
-          int[] tup = bf.readTuple();
+          int[] tup = bf.readLine();
           int luck = tup[0]; int imp = tup[1];
           if (imp == 0){
             lucks += luck;
@@ -25,8 +25,9 @@ public class hr_luckb {
             tos.add(luck);
           }
           Collections.sort(tos);
-          for(int i = tos.size()-1; i >= tos.size()-1-k; i--){
-            luck+=tos.get(i);
+          for(int i = tos.size()-1; i >= 0; i--){
+            if(i >= tos.size()-1-k) luck+=tos.get(i);
+            else luck-=tos.get(i)
           }
           System.out.println(luck);
         }
