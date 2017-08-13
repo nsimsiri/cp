@@ -75,7 +75,7 @@ public class sp_treeiso {
       int[] canon = new int[n];
       int[] lvl = new int[n];
       int _max = 0;
-      for(Map.EntrySet<String, Integer> ent : hash.entrySet()){
+      for(HashMap.EntrySet<String, Integer> ent : hash.entrySet()){
         _max = ent.getValue() > _max ? ent.getValue() : _max;
       }
       int c = _max == 0 ? 2 : _max + 1;
