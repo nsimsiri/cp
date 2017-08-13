@@ -123,7 +123,7 @@ public class sp_treeiso {
             System.out.format("k= %s\n", k);
             Map<Integer,List<Integer>> t1 = new HashMap<>();
             Map<Integer,List<Integer>> t2 = new HashMap<>();
-            for(int j = 0;j<2*n-2;j++){
+            for(int j = 0;j<2*k-2;j++){
                 String line = in.nextLine();
                 System.out.format("++==== " + line + "\n");
                 String[] inp = line.split(" ");
