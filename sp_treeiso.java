@@ -127,7 +127,7 @@ public class sp_treeiso {
                 String[] inp = line.split(" ");
                 int v1 = Integer.parseInt(inp[0]);
                 int v2 = Integer.parseInt(inp[1]);
-                if(j<n) bldtr(v1,v2,t1);
+                if(j<k) bldtr(v1,v2,t1);
                 else bldtr(v1,v2,t2);
             }
             
