@@ -131,6 +131,9 @@ public class sp_treeiso {
                 int v2 = Integer.parseInt(inp[1]);
                 if(j<n) bldtr(v1,v2,t1);
                 else bldtr(v1,v2,t2);
+                System.out.println(t1);
+                System.out.println(t2);
+                System.out.println("-=====");
 
 
             }
