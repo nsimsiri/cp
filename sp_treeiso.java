@@ -115,7 +115,7 @@ public class sp_treeiso {
           canon[cur] = hash.get(canonName);
         }
       }
-      return canon[root];
+      return hash.get(canon[root]);
     }
 
     public static void main(String[] args){
