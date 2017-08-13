@@ -69,6 +69,55 @@ public class sp_treeiso {
         Out.add(path.get(mid));
     }
 
+    public static int hashtree(Map<String, Integer> hash, Map<Integer, List<Integer>> m, int root, int n){
+      Stack<Integer> st = new Stack<>();
+      boolean[] vis = new boolean[n];
+      String[] canon = new String[n];
+      int[] lvl = new int[n];
+      int _max = 0;
+      for(Entry.Set<String, Integer> ent : hash.entrySet()){
+        _max = ent.getValue() > _max ? ent.getValue() : _max;
+      }
+      int c = _max == 0 ? 2 : _max + 1;
+      st.push(root);
+      lvl[root] = 0;
+      while(!st.isEmpty()){
+        int cur = st.pop();
+        if (!vis[cur]){
+          vis[cur] = true;
+          if(isLeaf(root, m)){
+            canon[cur] = "10";
+          } else {
+            for(Integer nei : m.get(cur)){
+              if (!vis[nei]){
+                st.push(nei);
+                lvl[nei] = lvl[cur]+1;
+              }
+            }
+          }
+        } else {
+          List<Integer> names = new ArrayList<>();
+          for(Integer nei : m.get(cur)){
+            if (lvl[nei] > lvl[cur]){
+              names.add(hash.get(nei));
+            }
+          }
+          Collections.sort(names);
+          StringBuffer sb = new StringBuffer("1");
+          for(Integer i : names){
+            sb.append(i);
+          }
+          sb.append("0");
+          Integer canonName = Integer.parseInt(sb);
+          if (!hash.containsKey(canonName)){
+            hash.put(canonName, c++);
+          }
+          canon[cur] = hash.get(canonName);
+        }
+      }
+      return canon[root];
+    }
+
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -82,6 +131,9 @@ public class sp_treeiso {
                 int v2 = Integer.parseInt(inp[1]);
                 if(j<n) bldtr(v1,v2,t1);
                 else bldtr(v1,v2,t2);
+                System.out.println(t1);
+                System.out.println(t2);
+                System.out.println("-=====");
 
 
             }
