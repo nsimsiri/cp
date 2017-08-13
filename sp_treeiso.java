@@ -122,8 +122,11 @@ public class sp_treeiso {
             int k = Integer.parseInt(in.nextLine());
             Map<Integer,List<Integer>> t1 = new HashMap<>();
             Map<Integer,List<Integer>> t2 = new HashMap<>();
+            System.out.format("k= %s\n", k);
             for(int j = 0;j<2*k-2;j++){
                 String line = in.nextLine();
+                System.out.format("### %s\n", line);
+                
                 String[] inp = line.split(" ");
                 int v1 = Integer.parseInt(inp[0]);
                 int v2 = Integer.parseInt(inp[1]);
