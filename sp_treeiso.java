@@ -120,25 +120,20 @@ public class sp_treeiso {
         int n = Integer.parseInt(in.nextLine());
         for(int i = 0; i < n; i++){
             int k = Integer.parseInt(in.nextLine());
-            System.out.format("k= %s\n", k);
             Map<Integer,List<Integer>> t1 = new HashMap<>();
             Map<Integer,List<Integer>> t2 = new HashMap<>();
             for(int j = 0;j<2*k-2;j++){
                 String line = in.nextLine();
-                System.out.format("++==== " + line + "\n");
                 String[] inp = line.split(" ");
-                System.out.format("== %s\n", Arrays.toString(inp));
                 int v1 = Integer.parseInt(inp[0]);
                 int v2 = Integer.parseInt(inp[1]);
                 if(j<n) bldtr(v1,v2,t1);
                 else bldtr(v1,v2,t2);
-                System.out.println(t1);
+            }
+        }
+         System.out.println(t1);
                 System.out.println(t2);
                 System.out.println("-=====");
 
-
-            }
-
-        }
     }
 }
