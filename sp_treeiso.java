@@ -75,7 +75,7 @@ public class sp_treeiso {
       String[] canon = new String[n];
       int[] lvl = new int[n];
       int _max = 0;
-      for(Entry.Set<String, Integer> ent : hash.entrySet()){
+      for(Map.EntrySet<String, Integer> ent : hash.entrySet()){
         _max = ent.getValue() > _max ? ent.getValue() : _max;
       }
       int c = _max == 0 ? 2 : _max + 1;
@@ -85,7 +85,7 @@ public class sp_treeiso {
         int cur = st.pop();
         if (!vis[cur]){
           vis[cur] = true;
-          if(isLeaf(root, m)){
+          if(isLeaf(cur, m)){
             canon[cur] = "10";
           } else {
             for(Integer nei : m.get(cur)){
