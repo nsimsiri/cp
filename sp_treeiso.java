@@ -130,10 +130,13 @@ public class sp_treeiso {
                 if(j<n) bldtr(v1,v2,t1);
                 else bldtr(v1,v2,t2);
             }
-        }
-         System.out.println(t1);
+            
+             System.out.println(t1);
                 System.out.println(t2);
                 System.out.println("-=====");
 
+        } 
+
     }
 }
+
