@@ -123,7 +123,9 @@ public class sp_treeiso {
             Map<Integer,List<Integer>> t1 = new HashMap<>();
             Map<Integer,List<Integer>> t2 = new HashMap<>();
             for(int j = 0;j<2*n-2;j++){
-                String[] inp = in.nextLine().split(" ");
+                String line = in.nextLine();
+                System.format.print("++==== " + line + "\n");
+                String[] inp = line.split(" ");
                 System.out.format("== %s\n", Arrays.toString(inp));
                 int v1 = Integer.parseInt(inp[0]);
                 int v2 = Integer.parseInt(inp[1]);
