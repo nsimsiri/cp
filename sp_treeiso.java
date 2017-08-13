@@ -72,7 +72,7 @@ public class sp_treeiso {
     public static int hashtree(Map<String, Integer> hash, Map<Integer, List<Integer>> m, int root, int n){
       Stack<Integer> st = new Stack<>();
       boolean[] vis = new boolean[n];
-      String[] canon = new String[n];
+      int[] canon = new int[n];
       int[] lvl = new int[n];
       int _max = 0;
       for(Map.EntrySet<String, Integer> ent : hash.entrySet()){
@@ -85,21 +85,18 @@ public class sp_treeiso {
         int cur = st.pop();
         if (!vis[cur]){
           vis[cur] = true;
-          if(isLeaf(cur, m)){
-            canon[cur] = "10";
-          } else {
-            for(Integer nei : m.get(cur)){
-              if (!vis[nei]){
-                st.push(nei);
-                lvl[nei] = lvl[cur]+1;
-              }
+          st.push(cur);
+          for(Integer nei : m.get(cur)){
+            if (!vis[nei]){
+              st.push(nei);
+              lvl[nei] = lvl[cur]+1;
             }
           }
         } else {
           List<Integer> names = new ArrayList<>();
           for(Integer nei : m.get(cur)){
             if (lvl[nei] > lvl[cur]){
-              names.add(hash.get(nei));
+              names.add(canon[nei]);
             }
           }
           Collections.sort(names);
@@ -108,14 +105,14 @@ public class sp_treeiso {
             sb.append(i);
           }
           sb.append("0");
-          Integer canonName = Integer.parseInt(sb);
+          String canonName = sb.toString();
           if (!hash.containsKey(canonName)){
             hash.put(canonName, c++);
           }
           canon[cur] = hash.get(canonName);
         }
       }
-      return hash.get(canon[root]);
+      return canon[root];
     }
 
     public static void main(String[] args){
