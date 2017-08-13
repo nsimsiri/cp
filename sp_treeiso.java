@@ -117,9 +117,9 @@ public class sp_treeiso {
 
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
+        int n = Integer.parseInt(in.nextInt());
         for(int i = 0; i < n; i++){
-            int k = in.nextInt();
+            int k = Integer.parseInt(in.nextLine());
             System.out.format("k= %s\n", k);
             Map<Integer,List<Integer>> t1 = new HashMap<>();
             Map<Integer,List<Integer>> t2 = new HashMap<>();
