@@ -25,6 +25,7 @@ public class hr_degentr {
                     int b = arr[j];
                     int c = arr[k];
                     if(a<b+c && b<a+c && c<a+b){
+                        System.out.format ("%s %s %s\n", a,b,c);
                         int _min_t = Math.min(a, Math.min(b,c));
                         int _max_t = Math.max(a, Math.max(b,c));
                         if (_min==-1 && _max==-1){
