@@ -17,8 +17,8 @@ public class Solution {
         int _min=-1
         int _max=-1;
         int[] sol = null;
-        for(int i=0;i<N;i++){
-            for(int j=i+1;j<N;i++){
+        for(int i=0;i<N-2;i++){
+            for(int j=i+1;j<N-1;j++){
                 for(int k=j+1;k<N;k++){
                     int a = arr[i];
                     int b = arr[j];
@@ -33,7 +33,7 @@ public class Solution {
                             if (_max_t >=_max){
                                 if(_max_t == _max && _min_t >= _min){
                                    sol = new int[]{a,b,c};
-                                   _min_t = _min;
+                                   _min = _min_t;
                                 } else if(_max_t > _max) {
                                     _max = _max_t;
                                     sol = new int[]{a,b,c};
@@ -46,10 +46,12 @@ public class Solution {
         }
         if (sol == null System.out.println(-1);
         else{
+            Arrays.sort(sol);
             for(int i = 0;i<3;i++){
                 System.out.print(sol[i]+" ");
             }
         }
     }
 }
+
 
