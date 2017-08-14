@@ -128,8 +128,8 @@ public class sp_treeiso {
                 System.out.format("### %s\n", line);
                 
                 String[] inp = line.split(" ");
-                int v1 = Integer.parseInt(inp[0]);
-                int v2 = Integer.parseInt(inp[1]);
+                int v1 = Integer.parseInt(inp[0])-1;
+                int v2 = Integer.parseInt(inp[1])-1;
                 if(j<k-1) bldtr(v1,v2,t1);
                 else bldtr(v1,v2,t2);
             }
