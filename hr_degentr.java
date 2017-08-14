@@ -29,7 +29,7 @@ public class hr_degentr {
                         int _min_t = Math.min(a, Math.min(b,c));
                         int _max_t = Math.max(a, Math.max(b,c));
                         if (_min==-1 && _max==-1){
-                            _min_t=_min; _max_t=_max;
+                            _min=_min_t; _max = _max_t;
                             sol = new int[]{a,b,c};
                         } else {
                             if (_max_t >=_max){
