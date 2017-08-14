@@ -62,6 +62,7 @@ public class sp_treeiso {
                 }
             }
         }
+        System.out.format("path = %s\n", path);
         int mid=path.size()/2;
         if(path.size()%2==0){
             Out.add(path.get(mid-1));
@@ -137,10 +138,14 @@ public class sp_treeiso {
              System.out.println(t1);
                 System.out.println(t2);
                 System.out.println("-=====");
-            int[] len = new int[k];
-        int co = walkcnt(0, t1, len);
-        System.out.println(Arrays.toString(len));
-        System.out.println(co);
+            List<Integer> out = new ArrayList<>();
+        findcen(t1, out, k);
+        System.out.println(Arrays.toString(out.toArray()));
+       
+        List<Integer> out2 = new ArrayList<>();
+        findcen(t2, out2, k);
+        System.out.println(Arrays.toString(out2.toArray()));
+        
         } 
         
     }
