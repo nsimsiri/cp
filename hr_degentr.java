@@ -14,7 +14,7 @@ public class Solution {
         for(int i=0;i<N;i++){
             arr[i] = in.nextInt();
         }
-        int _min=-1
+        int _min=-1;
         int _max=-1;
         int[] sol = null;
         for(int i=0;i<N-2;i++){
@@ -44,7 +44,7 @@ public class Solution {
                 }
             }
         }
-        if (sol == null System.out.println(-1);
+        if (sol == null) System.out.println(-1);
         else{
             Arrays.sort(sol);
             for(int i = 0;i<3;i++){
