@@ -18,8 +18,8 @@ public class Solution {
         int _max=-1;
         int[] sol = null;
         for(int i=0;i<N;i++){
-            for(int j=1;j<N;i++){
-                for(int k=2;k<N;k++){
+            for(int j=i+1;j<N;i++){
+                for(int k=j+1;k<N;k++){
                     int a = arr[i];
                     int b = arr[j];
                     int c = arr[k];
