@@ -9,7 +9,7 @@ public class Solution {
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
         Scanner in = new Scanner(System.in);
-        int N = Integer.parseInt(in.nextLine);
+        int N = Integer.parseInt(in.nextLine());
         int[] arr = new int[N];
         for(int i=0;i<N;i++){
             arr[i] = in.nextInt();
@@ -24,8 +24,8 @@ public class Solution {
                     int b = arr[j];
                     int c = arr[k];
                     if(a>b+c && b>a+c && c>a+b){
-                        int min_t = Math.min(a, Math.min(b,c));
-                        int max_t = Math.max(a, Math.max(b,c));
+                        int _min_t = Math.min(a, Math.min(b,c));
+                        int _max_t = Math.max(a, Math.max(b,c));
                         if (_min==-1 && _max==-1){
                             _min_t=_min; _max_t=_max;
                             sol = new int[]{a,b,c};
