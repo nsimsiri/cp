@@ -137,9 +137,11 @@ public class sp_treeiso {
              System.out.println(t1);
                 System.out.println(t2);
                 System.out.println("-=====");
-
         } 
-
+        int[] len = new int[n];
+        int co = walkcnt(0, t1, len);
+        System.out.println(Arrays.toString(len));
+        System.out.println(co);
     }
 }
 
