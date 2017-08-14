@@ -56,7 +56,7 @@ public class sp_treeiso {
         path.add(nextNode);
         while(nextNode!=endl2){
             for(Integer nei : m.get(nextNode)){
-                if(len2[nei] < len2[nextNode]){
+                if(len2[nextNode] < len2[nei]){
                     nextNode = nei;
                     path.add(nextNode);
                     break;
