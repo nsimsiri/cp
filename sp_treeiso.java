@@ -142,10 +142,18 @@ public class sp_treeiso {
             List<Integer> out = new ArrayList<>();
         findcen(t1, out, k);
         System.out.println(Arrays.toString(out.toArray()));
-       
         List<Integer> out2 = new ArrayList<>();
         findcen(t2, out2, k);
         System.out.println(Arrays.toString(out2.toArray()));
+        
+        Map<String, Integer> hash = new HashMap<>();
+        int hash_t1 = hashtree(hash, t1, out.get(0), k);
+        System.out.println("hash t1 = " + hash_t1);
+        System.out.println(hash);
+        int hash_t2 = hashtree(hash, t2, out2.get(0), k);
+        System.out.println("hash t2 = " + hash_t2);
+        System.out.println(hash);
+        
         
         } 
         
