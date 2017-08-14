@@ -44,7 +44,7 @@ public class Solution {
                 }
             }
         }
-        if (sol == null) System.out.println(-1);
+        if (sol == null) System.out.println("-1");
         else{
             Arrays.sort(sol);
             for(int i = 0;i<3;i++){
