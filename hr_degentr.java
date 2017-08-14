@@ -4,7 +4,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Solution {
+public class hr_degentr {
 
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
@@ -14,6 +14,7 @@ public class Solution {
         for(int i=0;i<N;i++){
             arr[i] = in.nextInt();
         }
+
         int _min=-1;
         int _max=-1;
         int[] sol = null;
@@ -23,7 +24,7 @@ public class Solution {
                     int a = arr[i];
                     int b = arr[j];
                     int c = arr[k];
-                    if(a>b+c && b>a+c && c>a+b){
+                    if(a<b+c && b<a+c && c<a+b){
                         int _min_t = Math.min(a, Math.min(b,c));
                         int _max_t = Math.max(a, Math.max(b,c));
                         if (_min==-1 && _max==-1){
@@ -53,5 +54,6 @@ public class Solution {
         }
     }
 }
+
 
 
