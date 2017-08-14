@@ -52,11 +52,11 @@ public class sp_treeiso {
         int endl2 = walkcnt(endl1, m, len2);
         System.out.format(" == %s -> %s %s \n", endl1, endl2, Arrays.toString(len2));
         List<Integer> path = new ArrayList<>();
-        int nextNode = endl1;
+        int nextNode = endl2;
         path.add(nextNode);
-        while(nextNode!=endl2){
+        while(nextNode!=endl1){
             for(Integer nei : m.get(nextNode)){
-                if(len2[nextNode] < len2[nei]){
+                if(len2[nextNode] > len2[nei]){
                     nextNode = nei;
                     path.add(nextNode);
                     break;
