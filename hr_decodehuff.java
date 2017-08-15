@@ -5,7 +5,7 @@ public class hr_decodehuff{
         Node cur = root;
         StringBuffer sb = new StringBuffer("");
         while(i<S.length()){
-            char c = S.charAt(i);
+            char c = S.charAt(i++);
             if(cur.left==null && cur.right==null){
                 sb.append(cur.data];
                 cur=root;
