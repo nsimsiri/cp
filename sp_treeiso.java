@@ -154,8 +154,13 @@ public class sp_treeiso {
         System.out.println("hash t2 = " + hash_t2);
         System.out.println(hash);
         
+        if(out2.size() == 2){
+            int hash_t3 = hashtree(hash, t2, out2.get(1), k);
+            System.out.println("hash t2 = " + hash_t2);
+            System.out.println(hash);
+        }
         
-        } 
+        }
         
     }
 }
