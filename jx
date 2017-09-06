@@ -1,4 +1,4 @@
 fl="$1"
 fle="$1.java"
-echo "javac $fle and java $fl"
+rm *.class
 javac $fle && java $fl
